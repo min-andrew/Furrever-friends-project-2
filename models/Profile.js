@@ -58,7 +58,7 @@ Profile.init(
     timestamps: false,
     freezeTableName: true,
     underscored: true,
-    modelName: "project",
+    modelName: "profile",
   }
 );
 
