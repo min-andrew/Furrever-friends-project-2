@@ -82,39 +82,4 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-//authentication for create new account
-router.post('/createac', (req, res) => {
-    const { name, email, password, confirmPassword } = req.body;
-
-    if (password === confirmPassword) {
-        if (userData.find(user => user.email === email)) {
-
-            res.render('createac', {
-                message: 'User already registered.',
-                messageClass: 'alert-danger'
-            });
-
-            return;
-        }
-
-        const hashedPassword = getHashedPassword(password);
-
-        userData.push({
-            name,
-            email,
-            password: hashedPassword
-        });
-
-        res.render('login', {
-            message: 'Registration Complete. Please login to continue.',
-            messageClass: 'alert-success'
-        });
-    } else {
-        res.render('register', {
-            message: 'Password does not match.',
-            messageClass: 'alert-danger'
-        });
-    }
-});
-
 module.exports = router;
