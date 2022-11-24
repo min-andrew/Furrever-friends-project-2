@@ -1,7 +1,7 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const hb = require('express-handlers');
+const hb = require('express-handlebars');
 const apiRoutes = require('./controllers');
 const util = require('./utils/helpers');
 //deciding a npm to use
