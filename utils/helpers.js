@@ -4,5 +4,3 @@ module.exports = {
         return date.toLocaleDateString();
     }
 };
-
-module.exports = withAuth;
