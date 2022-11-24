@@ -5,8 +5,9 @@ const withAuth = require('../utils/auth');
 // get route for homepage 
 router.get('/', async (req, res) => {
     try {
+        console.log("homepage")
         // get all posts for user data 
-        const postData = await Post.findall({
+        const postData = await Post.findAll({
             include: [
                 {
                     model: User,
@@ -17,7 +18,7 @@ router.get('/', async (req, res) => {
 
         // serialize data
         const posts = postData.map((post) => post.get({ plain: true }));
-
+        console.log(posts)
         // pass serialized data and session flag into homepage template
         res.render('homepage', {
             posts,
