@@ -1,12 +1,12 @@
 const router = require('express').Router();
-const { Content, User } = require('../models');
+const { Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
 // get route for homepage 
 router.get('/', async (req, res) => {
     try {
         // get all posts for user data 
-        const contentData = await Content.findall({
+        const postData = await Post.findall({
             include: [
                 {
                     model: User,
@@ -16,11 +16,11 @@ router.get('/', async (req, res) => {
         });
 
         // serialize data
-        const contents = contentData.map((content) => content.get({ plain: true }));
+        const posts = postData.map((post) => post.get({ plain: true }));
 
         // pass serialized data and session flag into homepage template
         res.render('homepage', {
-            contents,
+            posts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -28,10 +28,10 @@ router.get('/', async (req, res) => {
     }
 });
 
-// get route for posts in content 
-router.get('/content/:id', async (req, res) => {
+// get route for posts in post 
+router.get('/post/:id', async (req, res) => {
     try {
-        const contentData = await Content.findByPk(req.params.id, {
+        const postData = await Post.findByPk(req.params.id, {
             include: [
                 {
                     model: User,
@@ -40,10 +40,10 @@ router.get('/content/:id', async (req, res) => {
             ],
         });
 
-        const contents = contentData.get({ plain: true });
+        const posts = postData.get({ plain: true });
 
-        res.render('content', {
-            ...contents,
+        res.render('post', {
+            ...posts,
             logged_in: req.session.logged_in
         });
     } catch (err) {
@@ -57,7 +57,7 @@ router.get('/profile', withAuth, async (req, res) => {
         // find logged user based on session id 
         const userData = await User.findByPk(req.session.user_id, {
             attributes: { exclude: ['password'] },
-            include: [{ model: Content }],
+            include: [{ model: Post }],
         });
 
         const user = userData.get({ plain: true });
