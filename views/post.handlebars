@@ -19,10 +19,10 @@
 {{#each posts as |post|}}
   <div class="row justify-content-center">
     <div class="col-sml-8">
-      <h2>
+      <h2 id="post-title">
         {{post.title}}
       </h2>
-      <p>
+      <p id="post-content">
         {{post.body}}
       </p>
        <p class="post-meta">Created by {{post.user.name}} on {{format_date post.date_created}}</p>
@@ -31,4 +31,4 @@
   </div>
 {{/each}}
 
-<script src="./js/login.js"></script>
+<script src="./js/post.js"></script>
