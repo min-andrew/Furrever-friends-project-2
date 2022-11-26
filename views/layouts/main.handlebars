@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -16,17 +15,29 @@
 
   <body>
     <div>
-        <nav>
-            <!-- Conditionally render login or logout links -->
-            {{#if logged_in}}
-            <a href="./profile">My Profile</a> |
-            <a href="./post">Lickin Post</a>
-            <button class ="no-button" id="logout">Logout</button>
-            {{else}}
-            <a href="/login">Login</a>
-            {{/if}}
-        </nav>
-      <main class="container">
+      <nav
+        class="navbar navbar-expand-m navbar-custom sticky-top justify-content-start px-5"
+      >
+        <!-- Conditionally render login or logout links -->
+        {{#if logged_in}}
+          <span class="navbar-brand" id="banner">Furever Friends</span>
+          <button type="button" class="btn btn-secondary mx-2"><a
+              href="./profile"
+            >My Profile</a></button>
+          <button type="button" class="btn btn-secondary mx-2" id="post"><a
+              href="./post"
+            >Lickin Post</a></button>
+          <button
+            type="button"
+            class="btn btn-secondary mx-2"
+            id="logout"
+          >Logout</button>
+        {{else}}
+          <span class="navbar-brand" id="banner">Furever Friends</span>
+          <button type="button" class="btn btn-secondary mx-2">Login</button>
+        {{/if}}
+      </nav>
+      <main>
         <!-- Render the sub layout -->
         {{{body}}}
       </main>

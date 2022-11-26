@@ -3,4 +3,60 @@
     --light-blue: #A4E8E0;
     --cyan: #4CD7D0;
     --dark-yellow: #E1C340;
+   
+}
+
+.navbar-custom {
+    background-color: var(--light-blue);
+}
+
+
+.nabvar {
+    background-color: var(--light-blue);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+#banner {
+    font-style: bolder;
+    font-size: larger;
+    text-shadow: var(--yellow);
+}
+main {
+    background-color: var(--yellow);
+    height: 100vh;
+}
+
+#login-card {
+    background-color: var(--light-blue);
+}
+
+.border-custom {
+    border-color: var(--cyan);
+}
+
+.btn-primary {
+    font-style: bolder;
+    background-color: var(--cyan);
+    color: black;
+}
+
+.btn-primary:hover {
+    background-color: var(--dark-yellow);
+    color: black;
+}
+
+.btn-secondary {
+    background-color: var(--cyan);
+}
+
+.btn-secondary:hover {
+    background-color: var(--dark-yellow);
+    color: white;
+}
+.btn-secondary:hover a {
+    background-color: var(--dark-yellow);
+    color: white;
 }
