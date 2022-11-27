@@ -19,14 +19,17 @@ a {
     text-decoration: none;
     color: white;
 }
+
 #banner {
     font-style: bolder;
     font-size: larger;
     text-shadow: var(--yellow);
 }
-main {
-    background-color: var(--yellow);
-    height: 100vh;
+
+.bg-image {
+    background-image: url('../image/grass-background.jpg');
+    background-attachment: fixed;
+    min-height: 100vh;
 }
 
 #login-card {
@@ -59,4 +62,13 @@ main {
 .btn-secondary:hover a {
     background-color: var(--dark-yellow);
     color: white;
+}
+.card {
+    background-color: var(--light-blue);
+}
+
+footer {
+    color: --cyan;
+    background-color: var(--yellow);
+    font-size: .625rem;
 }
