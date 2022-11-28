@@ -1,68 +1,36 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Post, User, Profile } = require("../models");
 const withAuth = require("../utils/auth");
+const path = require('path');
 
-// get route for login page
-router.get("/", async (req, res) => {
-  try {
-    console.log("login page");
-    // get all posts for user data
-    const postData = await Post.findAll({
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-    });
+// This file contains routes for pages that will render
 
-    // serialize data
-    const posts = postData.map((post) => post.get({ plain: true }));
-    console.log(posts);
-    // pass serialized data and session flag into login template
-    res.render("login", {
-      posts,
-      logged_in: req.session.logged_in,
-    });
-  } catch (err) {
-    res.status(500).json(err);
+// get route for login page (homepage). If already logged in, redirects to /post page.
+router.get("/", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/post");
+    return;
   }
+  res.render('login');
 });
 
-//GET route for posts
+//GET route for posts on the Post page (Lickin' Post)
 router.get("/post", (req, res) => {
-  try {
-    if (req.session.logged_in) {
-      res.render("post");
-    }
-  } catch (err) {
-    res.status(500).json(err);
-  }
-});
-// get route for posts in post
-router.get("/post/:id", async (req, res) => {
-  try {
-    const postData = await Post.findByPk(req.params.id, {
-      include: [
-        {
-          model: User,
-          attributes: ["name"],
-        },
-      ],
-    });
+  Post.findAll({
+    include: [User],
+  })
+    .then((postData) => {
+      const posts = postData.map((post) => post.get({ plain: true }));
 
-    const posts = postData.get({ plain: true });
-
-    res.render("post", {
-      ...posts,
-      logged_in: req.session.logged_in,
+      res.render("post", { posts });
+    })
+    .catch((err) => {
+      res.status(500).json(err);
     });
-  } catch (err) {
-    res.status(500).json(err);
-  }
 });
 
-// get route for profile with auth
+// get route for profile with auth. This is for the user's profile page. 
+// TODO: Is the model right? We don't call the profile model here. 
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // find logged user based on session id
@@ -82,24 +50,13 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
-// get route for login
-router.get("/login", (req, res) => {
-  // if user is logged in, redirect to another route
-  if (req.session.logged_in) {
-    res.redirect("./profile");
-    return;
-  }
-
-  res.render("login");
-});
-
+// Route to create an account on the Create Account page. If already logged in, redirects to Post (lickin' post) //TODO: Is that where we'd like it redirected? 
 router.get("/createac", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/')
+    res.redirect('/post')
     return;
   }
   res.render("createac")
 })
-
 
 module.exports = router;
