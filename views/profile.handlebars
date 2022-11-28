@@ -1,0 +1,64 @@
+<div class="row">
+    <div class="col-auto">
+        <h2>Welcome, {{name}}!</h2>
+    </div>
+</div>
+
+<div class="row mt-4">
+    <div class="col-md-6">
+        <h3>Create Your New Furever Friend Profile</h3>
+
+        <form class="form new-profile-form">
+            <div class="form-group">
+                <label for="display-name">Display name:</label>
+                <input class="form-input" type="text" id="display-name" name="display-name" />
+            </div>
+            <div class="form-group">
+                <label for="dog-name">Dog Name:</label>
+                <input class="form-input" type="text" id="dog-name" name="dog-name" />
+            </div>
+            <div class="form-group">
+                <label for="dog-breed">Breed:</label>
+                <textarea class="form-input" id="dog-breed" name="dog-breed"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dog-gender">Gender:</label>
+                <textarea class="form-input" id="dog-gender" name="dog-gender"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dog-size">Size:</label>
+                <textarea class="form-input" id="dog-size" name="dog-size"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dog-neighborhood">Neighborhood:</label>
+                <textarea class="form-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="dog-hobbies">Hobbies:</label>
+                <textarea class="form-input" id="dog-hobbies" name="dog-hobbies"></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" class="btn btn-primary">Create</button>
+            </div>
+        </form>
+    </div>
+
+    {{#if projects.length}}
+    <div class="col-md-6 project-list">
+        <h3>Current Projects:</h3>
+
+        {{#each projects as |project|}}
+        <div class="row mb-2">
+            <div class="col-md-8">
+                <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
+            </div>
+            <div class="col-md-4">
+                <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
+            </div>
+        </div>
+        {{/each}}
+    </div>
+    {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
