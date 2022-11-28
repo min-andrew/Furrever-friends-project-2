@@ -72,3 +72,9 @@ footer {
     background-color: var(--yellow);
     font-size: .625rem;
 }
+
+.justify-content-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
