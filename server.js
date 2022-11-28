@@ -1,9 +1,9 @@
 const path = require('path');
 const express = require('express');
 const session = require('express-session');
-const hb = require('express-handlebars');
-const apiRoutes = require('./controllers');
-const util = require('./utils/helpers');
+const exphbs = require('express-handlebars');
+const routes = require('./controllers');
+const helpers = require('./utils/helpers');
 //deciding a npm to use
 //const doggy = require('')
 
@@ -15,7 +15,7 @@ const sequelizeStore = require('connect-session-sequelize')(session.Store);
 const app = express();
 const PORT = process.env.PORT || 3001;
 
-const hbjs = hb.create({ util })
+const hbs = exphbs.create({ helpers })
 
 const cookie = {
     secret: 'browser history cookie',
@@ -34,15 +34,15 @@ const cookie = {
   
 app.use(session(cookie));
 
-app.engine('handlebars', hbjs.engine);
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use(apiRoutes);
+app.use(routes);
 
 sequelize.sync({ force: false }).then(() => {
-  app.listen(PORT, () => console.log('Now listening'));
+  app.listen(PORT, () => console.log('Now listening on port ' + PORT));
 });

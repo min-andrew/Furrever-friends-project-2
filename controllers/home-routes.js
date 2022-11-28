@@ -1,11 +1,9 @@
 const router = require("express").Router();
-const { Post, User, Profile } = require("../models");
+const { Post, User } = require("../models");
 const withAuth = require("../utils/auth");
 const path = require('path');
 
-// This file contains routes for pages that will render
-
-// get route for login page (homepage). If already logged in, redirects to /post page.
+// get route for login page
 router.get("/", (req, res) => {
   if (req.session.loggedIn) {
     res.redirect("/post");
@@ -14,7 +12,7 @@ router.get("/", (req, res) => {
   res.render('login');
 });
 
-//GET route for posts on the Post page (Lickin' Post)
+//GET route for posts
 router.get("/post", (req, res) => {
   Post.findAll({
     include: [User],
@@ -29,8 +27,7 @@ router.get("/post", (req, res) => {
     });
 });
 
-// get route for profile with auth. This is for the user's profile page. 
-// TODO: Is the model right? We don't call the profile model here. 
+// get route for profile with auth
 router.get("/profile", withAuth, async (req, res) => {
   try {
     // find logged user based on session id
@@ -50,13 +47,13 @@ router.get("/profile", withAuth, async (req, res) => {
   }
 });
 
-// Route to create an account on the Create Account page. If already logged in, redirects to Post (lickin' post) //TODO: Is that where we'd like it redirected? 
 router.get("/createac", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/post')
+    res.redirect('/')
     return;
   }
   res.render("createac")
 })
+
 
 module.exports = router;
