@@ -32,7 +32,7 @@ a {
     min-height: 100vh;
 }
 
-#login-card {
+#login-card, #createac-card{
     background-color: var(--light-blue);
 }
 
