@@ -21,14 +21,15 @@
         <!-- Conditionally render login or logout links -->
         {{#if logged_in}}
           <span class="navbar-brand col-3" id="banner">Furever Friends</span>
-          <button type="button" class="btn btn-secondary col-2 mx-1"><a
-              href="./profile"
-            >My Profile</a></button>
-          <button
-            type="button"
-            class="btn btn-secondary col-2 mx-1"
-            id="post"
-          ><a href="./post">Lickin Post</a></button>
+          <a href="./profile"><button
+              type="button"
+              class="btn btn-secondary col-2 mx-1"
+            >My Profile</button></a>
+          <a href="./post"><button
+              type="button"
+              class="btn btn-secondary col-2 mx-1"
+              id="post"
+            >Lickin Post</button></a>
           <button
             type="button"
             class="btn btn-secondary col-2 mx-1"
@@ -36,10 +37,12 @@
           >Logout</button>
         {{else}}
           <span class="navbar-brand col-3" id="banner">Furever Friends</span>
-          <button
-            type="button"
-            class="btn btn-secondary col-2 mx-2"
-          >Login</button>
+          <a href="./login">
+            <button
+              type="button"
+              class="btn btn-secondary col-2 mx-2"
+            >Login</button>
+          </a>
         {{/if}}
       </nav>
       <main>
@@ -47,7 +50,6 @@
           <!-- Render the sub layout -->
           {{{body}}}
         </div>
-
       </main>
       <footer>
         <span>Created by OhMyDog 2022</span>
