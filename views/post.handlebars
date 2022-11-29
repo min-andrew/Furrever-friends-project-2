@@ -39,7 +39,7 @@
           {{post.body}}
         </p>
         <p class="post-meta">Created by
-          {{post.user.name}}
+          <a href="./profile/{{user.id}}" id="viewProfile">{{post.user.name}}</a>
           on
           {{format_date post.date_created}}</p>
       </div>
