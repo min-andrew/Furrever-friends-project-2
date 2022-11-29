@@ -3,14 +3,13 @@ const newFormHandler = async (event) => {
 
   const title = document.querySelector('#post-title').value.trim();
   const body = document.querySelector('#post-body').value.trim();
+  const image = document.querySelector('#image')
+  const formData = new FormData(document.querySelector(".form"));
 
-  if (title && body) {
+  if (title && body && image) {
     const response = await fetch(`/api/post`, {
       method: 'POST',
-      body: JSON.stringify({ title, body }),
-      headers: {
-        'Content-Type': 'application/json',
-      },
+      body: formData,
     });
 
     if (response.ok) {

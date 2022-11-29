@@ -17,10 +17,6 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
-    display_name: {
-      type: DataTypes.STRING(24),
-      allowNull: false,
-    },
     dog_name: {
       type: DataTypes.STRING(24),
       allowNull: false,

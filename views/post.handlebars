@@ -1,24 +1,18 @@
 <div class="row">
   <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 py-3 text-center">
     <h3>Create a new post:</h3>
-    <form class="form new-post-form">
+    <form class="form new-post-form" enctype="multipart/form-data">
       <div class="form-group row px-1">
         <label for="post-name" class="col-2 text-wrap">Quick Sniff:</label>
-        <input
-          class="form-input col-8"
-          type="text"
-          id="post-title"
-          name="post-title"
-        />
+        <input class="form-input col-8" type="text" id="post-title" name="title" />
+      </div>
+      <div class="form-group">
+        <label for="image">Image</label>
+        <input type="file" id="image" name="image" accept="image/*" required>
       </div>
       <div class="form-group row py-2">
         <label for="post-body" class="col-2 text-wrap">All the Kibbles:</label>
-        <textarea
-          class="form-input col-8"
-          rows="6"
-          id="post-body"
-          name="post-body"
-        ></textarea>
+        <textarea class="form-input col-8" rows="6" id="post-body" name="body"></textarea>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary create-btn">CREATE</button>
@@ -45,6 +39,7 @@
       </div>
     </div>
   </div>
+</div>
 {{/each}}
 
 <script src="/JS/post.js"></script>
