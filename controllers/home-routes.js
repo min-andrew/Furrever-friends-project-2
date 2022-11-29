@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const { Post, User } = require("../models");
+const { Post, User, Profile } = require("../models");
 const withAuth = require("../utils/auth");
-const path = require('path');
+const path = require("path");
 
 // get route for login page
 router.get("/", (req, res) => {
@@ -9,7 +9,7 @@ router.get("/", (req, res) => {
     res.redirect("/post");
     return;
   }
-  res.render('login');
+  res.render("login");
 });
 
 //GET route for posts
@@ -49,11 +49,33 @@ router.get("/profile", withAuth, async (req, res) => {
 
 router.get("/createac", (req, res) => {
   if (req.session.logged_in) {
-    res.redirect('/')
+    res.redirect("/");
     return;
   }
-  res.render("createac")
-})
+  res.render("createac");
+});
 
+router.get("/profile/:id", async (req, res) => {
+  try {
+    const profileData = await Profile.findByPk(req.params.id, {
+      include: [
+        {
+          model: User,
+          attributes: ["name"],
+        },
+      ],
+    });
+
+    //const profile = profileData.get({ plain: true })
+    const profile = profileData;
+   
+    res.render("viewProfile", {
+      profile,
+      logged_in: true,
+    });
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
 
 module.exports = router;

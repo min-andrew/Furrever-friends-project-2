@@ -23,20 +23,20 @@
 
 <!-- Loop over each object in the posts -->
 {{#each posts as |post|}}
-<div class="overflow-auto">
-  <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
-    <div class="col-sml-8">
-      <h2 id="post-title">
-        {{post.title}}
-      </h2>
-      <img class="img-responsive" src="{{post.image}}">
-      <p id="post-content">
-        {{post.body}}
-      </p>
-      <p class="post-meta">Created by
-        {{post.user.name}}
-        on
-        {{format_date post.date_created}}</p>
+  <div class="overflow-auto">
+    <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
+      <div class="col-sml-8">
+        <h2 id="post-title">
+          {{post.title}}
+        </h2>
+        <p id="post-content">
+          {{post.body}}
+        </p>
+        <p class="post-meta">Created by
+          <a href="./profile/{{user.id}}" id="viewProfile">{{post.user.name}}</a>
+          on
+          {{format_date post.date_created}}</p>
+      </div>
     </div>
   </div>
 </div>
