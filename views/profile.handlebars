@@ -14,8 +14,8 @@
 
 {{!-- Breed --}}
   <div class="form-group profile-group">
-    <label id="dog-breed" for="breed-list">Breed</label>
-    <select multiple class="form-control" id="exampleFormControlSelect2">
+    <label id="breed" for="breed-list">Breed</label>
+    <select multiple class="form-control" id="dog-breed">
       <option>Affenpinscher</option>
       <option>Afghan hound</option>
       <option>Airedale terrier</option>
@@ -115,13 +115,13 @@
 <div class="profile-group">
 <label id="dog-gender">Gender</label>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <input class="form-check-input gender" type="checkbox" value="Male" id="defaultCheck1">
   <label class="form-check-label" for="defaultCheck1">
     Male
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <input class="form-check-input gender" type="checkbox" value="Female" id="defaultCheck1">
   <label class="form-check-label" for="defaultCheck1">
     Female
   </label>
@@ -132,19 +132,19 @@
 <div class="profile-group">
 <label id="dog-size">Size</label>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <input class="form-check-input size" type="checkbox" value="Small" id="defaultCheck1">
   <label class="form-check-label" for="defaultCheck1">
     Small
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-  <label class="form-check-label" for="defaultCheck1">
+  <input class="form-check-input size" type="checkbox" value="Medium" id="defaultCheck1">
+  <label class="form-check-label size" for="defaultCheck1">
     Medium
   </label>
 </div>
 <div class="form-check">
-  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <input class="form-check-input size" type="checkbox" value="Large" id="defaultCheck1">
   <label class="form-check-label" for="defaultCheck1">
     Large
   </label>
@@ -153,7 +153,7 @@
 
 {{!-- Neighborhood --}}
 <div class="form-group profile-group">
-    <label id="dog-neighborhood" for="dog-neighborhood">Neighborhood:</label>
+    <label for="dog-neighborhood">Neighborhood:</label>
         <textarea class="form-input profile-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
 </div>
 
