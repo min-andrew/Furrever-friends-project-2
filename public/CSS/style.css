@@ -150,3 +150,26 @@ textarea {
 .img-responsive {
     width: 50%;
 }
+
+.profile-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.create-profile {
+    text-align: center;
+    margin-top: 8px;
+}
+
+.profile-group {
+    padding: .5rem;
+}
+.profile-input {
+    width: 100%;
+}
+
+.submit-profile {
+    text-align: center;
+    margin-top: 6px;
+}
