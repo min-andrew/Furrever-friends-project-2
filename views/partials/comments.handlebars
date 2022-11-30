@@ -1,12 +1,14 @@
-<div class="comments">
+<div class="comments card mx-auto col-sm-10 my-5 py-3 text-center">
   {{#each this}}
   <section class="comment">
     <div class="meta">
-      {{user.name}} on
-      {{!-- {{format_date post.date_created}} --}}
+      {{user.name}}
+      {{!-- on --}}
+      {{post.date_created}}
     </div>
-    <div class="text">
+    <div class="text ">
       {{comment_body}}
+      <hr>
     </div>
   </section>
   {{/each}}
