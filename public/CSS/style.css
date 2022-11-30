@@ -5,19 +5,19 @@
     --dark-yellow: #E1C340;
    
 }
+ * {
+    font-family: 'Poppins', sans-serif;
+ }
 
 .navbar-custom {
-    background-color: var(--light-blue);
-}
-
-
-.nabvar {
     background-color: var(--light-blue);
 }
 
 a {
     text-decoration: none;
     color: white;
+   
+   
 }
 
 #banner {
@@ -27,9 +27,13 @@ a {
 }
 
 .bg-image {
-    background-image: url('../image/grass-background.jpg');
+    background-image: url('../image/dogs.jpg');
     background-attachment: fixed;
     min-height: 100vh;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+    position: relative;
 }
 
 #login-card, #createac-card{
@@ -77,4 +81,68 @@ footer {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+#image-upload {
+    display: flex;
+    justify-content: center;   
+}
+
+textarea {
+    width: 80%;
+    height: 100px;
+}
+
+#comment-btn {
+    width: 30rem;
+    background-color: #4CD7D0;
+    border-radius: 0.375rem;
+    margin-bottom: 20px;
+}
+
+#comment-btn:hover {
+    background-color: #E1C340;
+    
+}
+
+.comment-form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.input-field {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80%;
+    height: 100px;
+    margin-bottom: 5px;
+}
+
+.single-post {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.single-image {
+    width: 50%;
+}
+
+.posts {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.log-dog {
+    border-color: black;
+    border-style: groove;
+}
+
+.login-title {
+    margin-top: .5rem;
 }

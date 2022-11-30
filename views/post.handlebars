@@ -25,7 +25,7 @@
 {{#each posts as |post|}}
 <div class="overflow-auto">
   <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
-    <div class="col-sml-8">
+    <div class="col-sml-8 posts">
       <h2 id="post-title">
         {{post.title}}
       </h2>
@@ -37,6 +37,7 @@
         <a href="./profile/{{user.id}}" id="viewProfile">{{post.user.name}}</a>
         on
         {{format_date post.date_created}}
+        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
       </p>
     </div>
   </div>
