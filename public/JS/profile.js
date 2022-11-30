@@ -26,6 +26,8 @@ const newFormHandler = async (event) => {
     });
 
     // If profile is successfully created, then redirects to the profile. If there is an error creating the profile, it alerts the users to try again.
+
+    // TODO: where do we want the page to change to after creating an account?
     if (response.ok) {
       document.location.replace("/profile");
     } else {

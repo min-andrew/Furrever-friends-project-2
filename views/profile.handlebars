@@ -15,19 +15,19 @@
             </div>
             <div class="form-group">
                 <label for="dog-breed">Breed:</label>
-                <textarea class="form-input" id="dog-breed" name="dog-breed"></textarea>
+                <input class="form-input" type ="text" id="dog-breed" name="dog-breed">
             </div>
             <div class="form-group">
                 <label for="dog-gender">Gender:</label>
-                <textarea class="form-input" id="dog-gender" name="dog-gender"></textarea>
+                <input class="form-input" type="text" id="dog-gender" name="dog-gender">
             </div>
             <div class="form-group">
                 <label for="dog-size">Size:</label>
-                <textarea class="form-input" id="dog-size" name="dog-size"></textarea>
+                <input class="form-input" type="text" id="dog-size" name="dog-size">
             </div>
             <div class="form-group">
                 <label for="dog-neighborhood">Neighborhood:</label>
-                <textarea class="form-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
+                <input class="form-input" type="text" id="dog-neighborhood" name="dog-neighborhood">
             </div>
             <div class="form-group">
                 <label for="dog-hobbies">Hobbies:</label>
@@ -38,23 +38,6 @@
             </div>
         </form>
     </div>
-
-    {{#if projects.length}}
-    <div class="col-md-6 project-list">
-        <h3>Current Projects:</h3>
-
-        {{#each projects as |project|}}
-        <div class="row mb-2">
-            <div class="col-md-8">
-                <h4><a href="/project/{{project.id}}">{{project.name}}</a></h4>
-            </div>
-            <div class="col-md-4">
-                <button class="btn btn-sm btn-danger" data-id="{{project.id}}">DELETE</button>
-            </div>
-        </div>
-        {{/each}}
-    </div>
-    {{/if}}
 </div>
 
 <script src="./js/profile.js"></script>
