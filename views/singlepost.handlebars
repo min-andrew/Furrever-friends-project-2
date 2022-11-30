@@ -1,0 +1,25 @@
+<div class="text-center card single-post">
+  <h2>{{post.title}}</h2>
+  <img class="img-responsive single-image" src="{{post.image}}">
+  <p>{{post.body}}</p>
+    <p class="post-meta">Created by
+        <a href="./profile/{{user.id}}" id="viewProfile">{{post.user.name}}</a>
+        on
+        {{format_date post.date_created}}
+ </div>
+
+<form class="comment-form card">
+    <div class="input-field">
+
+        <textarea type="text" id="comment" rows="10" placeholder="What's on your mind?"></textarea>
+    </div>
+        <input type="hidden" name="post-id" value="{{post.id}}">
+        <button type="submit" id="comment-btn">Add Comment</button>
+</form>
+<div id="#comments">
+{{> comments post.comments}}
+</div>
+
+
+<script src="/js/comment.js"></script>
+
