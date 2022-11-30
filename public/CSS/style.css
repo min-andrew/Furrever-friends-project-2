@@ -110,6 +110,7 @@ textarea {
     justify-content: center;
     align-items: center;
     margin-bottom: 10px;
+    width: 80%;
 }
 
 .input-field {
@@ -121,10 +122,18 @@ textarea {
     margin-bottom: 5px;
 }
 
+.single-post-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
 .single-post {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 80%;
 }
 
 .single-image {
@@ -172,4 +181,9 @@ textarea {
 .submit-profile {
     text-align: center;
     margin-top: 6px;
+}
+
+#comments {
+    width: 80%;
+    background-color: var(--light-blue);
 }

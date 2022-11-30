@@ -1,3 +1,4 @@
+<div class="single-post-container">
 <div class="text-center card single-post">
   <h2>{{post.title}}</h2>
   <img class="img-responsive single-image" src="{{post.image}}">
@@ -16,6 +17,7 @@
         <input type="hidden" name="post-id" value="{{post.id}}">
         <button type="submit" id="comment-btn">Add Comment</button>
 </form>
+</div>
 <div id="#comments">
 {{> comments post.comments}}
 </div>
