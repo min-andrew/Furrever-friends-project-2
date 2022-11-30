@@ -20,7 +20,7 @@ const hbs = exphbs.create({ helpers });
 const cookie = {
   secret: "browser history cookie",
   cookie: {
-    maxAge: 300000,
+    maxAge: 30000000000,
     httpOnly: true,
     secure: false,
     sameSite: "strict",

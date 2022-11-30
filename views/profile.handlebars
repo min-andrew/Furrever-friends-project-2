@@ -1,43 +1,174 @@
-<div class="row">
-    <div class="col-auto">
-        <h2>Welcome, {{name}}!</h2>
+<div class="row mt-4 profile-container">
+    <div class="col-md-6 card profile">
+        <div>
+         <h2 class="create-profile">Welcome, {{name}}!</h2>
+        <h3 class="create-profile">Create Your Profile</h3>
+        </div>
+
+{{!-- Name --}}
+ <form class="form new-profile-form">
+    <div class="form-group profile-group">
+        <label id="name" for="dog-name">Dog Name:</label>
+        <input class="form-input profile-input" type="text" id="dog-name" name="dog-name" />
     </div>
+
+{{!-- Breed --}}
+  <div class="form-group profile-group">
+    <label id="breed" for="breed-list">Breed</label>
+    <select multiple class="form-control" id="exampleFormControlSelect2">
+      <option>Affenpinscher</option>
+      <option>Afghan hound</option>
+      <option>Airedale terrier</option>
+      <option>Akita</option>
+      <option>Alaskan Malamute</option>
+      <option>American Staffordshire terrier</option>
+      <option>American water spaniel</option>
+      <option>Australian cattle dog</option>
+      <option>Australian shepherd</option>
+      <option>Australian terrier</option>
+      <option>Basenji</option>
+      <option>Basset hound</option>
+      <option>Beagle</option>
+      <option>Bearded collie</option>
+      <option>Bedlington terrier</option>
+      <option>Bernese mountain dog</option>
+      <option>Bichon frise</option>
+      <option>Black and tan coonhound</option>
+      <option>Bloodhound</option>
+      <option>Border collie</option>
+      <option>Border terrier</option>
+      <option>Borzoi</option>
+      <option>Boston terrier</option>
+      <option>Bouvier des Flandres</option>
+      <option>Boxer</option>
+      <option>Briard</option>
+      <option>Brittany</option>
+      <option>Brussels griffon</option>
+      <option>Bull terrier</option>
+      <option>Bulldog</option>
+      <option>Bullmastiff</option>
+      <option>Cairn terrier</option>
+      <option>Canaan dog</option>
+      <option>Chesapeake Bay retriever</option>
+      <option>Chihuahua</option>
+      <option>Chinese crested</option>
+      <option>Chinese shar-pei</option>
+      <option>Chow chow</option>
+      <option>Cocker spaniel</option>
+      <option>Collie</option>
+      <option>Curly-coated retriever</option>
+      <option>Dachshund</option>
+      <option>Dalmatian</option>
+      <option>Doberman pinscher</option>
+      <option>Doodle Dog</option>
+      <option>English cocker spaniel</option>
+      <option>English setter</option>
+      <option>English springer spaniel</option>
+      <option>English toy spaniel</option>
+      <option>Eskimo dog</option>
+      <option>Fox terrier</option>
+      <option>Foxhound</option>
+      <option>French bulldog</option>
+      <option>German shepherd</option>
+      <option>Golden retriever</option>
+      <option>Great Dane</option>
+      <option>Greyhound</option>
+      <option>Irish setter</option>
+      <option>Irish water spaniel</option>
+      <option>Jack Russell terrier</option>
+      <option>Labrador retriever</option>
+      <option>Labradoodle</option>
+      <option>Lakeland terrier</option>
+      <option>Lhasa apso</option>
+      <option>Maltese</option>
+      <option>Mastiff</option>
+      <option>Mexican hairless</option>
+      <option>Mutt</option>
+      <option>Newfoundland</option>
+      <option>Norwich terrier</option>
+      <option>Otterhound</option>
+      <option>Papillon</option>
+      <option>Pekingese</option>
+      <option>Pointer</option>
+      <option>Pomeranian</option>
+      <option>Poodle</option>
+      <option>Pug</option>
+      <option>Rottweiler</option>
+      <option>Saint Bernard</option>
+      <option>Samoyed</option>
+      <option>Schnauzer</option>
+      <option>Scottish terrier</option>
+      <option>Shetland sheepdog</option>
+      <option>Shih tzu</option>
+      <option>Siberian husky</option>
+      <option>Tibetan terrier</option>
+      <option>Weimaraner</option>
+      <option>Welsh terrier</option>
+      <option>West Highland white terrier</option>
+      <option>whippet</option>
+      <option>Yorkshire terrier</option>
+      <option>Other</option>
+    </select>
+  </div>
+
+{{!-- Gender --}}
+<div class="profile-group">
+<label id="gender">Gender</label>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Male
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Female
+  </label>
+</div>
 </div>
 
-<div class="row mt-4">
-    <div class="col-md-6">
-        <h3>Create Your New Furever Friend Profile</h3>
+{{!-- Size --}}
+<div class="profile-group">
+<label id="size">Size</label>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Small
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Medium
+  </label>
+</div>
+<div class="form-check">
+  <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+  <label class="form-check-label" for="defaultCheck1">
+    Large
+  </label>
+</div>
+</div>
 
-        <form class="form new-profile-form">
-            <div class="form-group">
-                <label for="dog-name">Dog Name:</label>
-                <input class="form-input" type="text" id="dog-name" name="dog-name" />
-            </div>
-            <div class="form-group">
-                <label for="dog-breed">Breed:</label>
-                <textarea class="form-input" id="dog-breed" name="dog-breed"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="dog-gender">Gender:</label>
-                <textarea class="form-input" id="dog-gender" name="dog-gender"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="dog-size">Size:</label>
-                <textarea class="form-input" id="dog-size" name="dog-size"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="dog-neighborhood">Neighborhood:</label>
-                <textarea class="form-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
-            </div>
-            <div class="form-group">
-                <label for="dog-hobbies">Hobbies:</label>
-                <textarea class="form-input" id="dog-hobbies" name="dog-hobbies"></textarea>
-            </div>
-            <div class="form-group">
-                <button type="submit" class="btn btn-primary">Create</button>
-            </div>
-        </form>
+{{!-- Neighborhood --}}
+<div class="form-group profile-group">
+    <label id="neighborhood" for="dog-neighborhood">Neighborhood:</label>
+        <textarea class="form-input profile-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
+</div>
+
+{{!-- Hobbies --}}
+<div class="form-group profile-group">
+    <label for="dog-hobbies">Hobbies:</label>
+        <textarea class="form-input profile-input" id="dog-hobbies" name="dog-hobbies"></textarea>
+</div>
+
+{{!-- Submit Button --}}
+    <div class="form-group submit-profile">
+        <button type="submit" class="btn btn-primary">Create</button>
     </div>
+</form>
+</div>
 
     {{#if projects.length}}
     <div class="col-md-6 project-list">
