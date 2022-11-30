@@ -146,3 +146,7 @@ textarea {
 .login-title {
     margin-top: .5rem;
 }
+
+.img-responsive {
+    width: 50%;
+}
