@@ -2,9 +2,9 @@ const newFormHandler = async (event) => {
   event.preventDefault();
 
   const dog_name = document.querySelector("#dog-name").value.trim();
-  const breed = document.querySelector("#dog-breed").value.trim();
-  const gender = document.querySelector("#dog-gender").value.trim();
-  const size = document.querySelector("#dog-size").value.trim();
+  const breed = document.querySelector("#dog-breed").value;
+  const gender = document.querySelector(".gender:checked").value;
+  const size = document.querySelector(".size:checked").value;
   const neighborhood = document.querySelector("#dog-neighborhood").value.trim();
   const hobbies = document.querySelector("#dog-hobbies").value.trim();
 
@@ -27,9 +27,9 @@ const newFormHandler = async (event) => {
 
     // If profile is successfully created, then redirects to the profile. If there is an error creating the profile, it alerts the users to try again.
 
-    // TODO: where do we want the page to change to after creating an account?
+    // TODO: currently going to /post, but eventually will want to route to /viewprofile
     if (response.ok) {
-      document.location.replace("/profile");
+      document.location.replace("/post");
     } else {
       alert("Failed to create profile. Please try again");
     }
