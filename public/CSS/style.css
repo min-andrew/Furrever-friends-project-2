@@ -15,9 +15,7 @@
 
 a {
     text-decoration: none;
-    color: white;
-   
-   
+    color: white;  
 }
 
 #banner {
@@ -88,13 +86,16 @@ footer {
     justify-content: center;   
 }
 
+.file-upload-button {
+    background-color: #4CD7D0;
+}
 textarea {
     width: 80%;
     height: 100px;
 }
 
 #comment-btn {
-    width: 30rem;
+    /* width: 30rem; */
     background-color: #4CD7D0;
     border-radius: 0.375rem;
     margin-bottom: 20px;
@@ -183,7 +184,6 @@ textarea {
     margin-top: 6px;
 }
 
-#comments {
-    width: 80%;
-    background-color: var(--light-blue);
+.comments {
+
 }
