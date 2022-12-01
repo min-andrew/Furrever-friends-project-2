@@ -1,5 +1,3 @@
-const { NOEXPAND } = require("sequelize/types/table-hints");
-
 const newFormHandler = async (event) => {
   event.preventDefault();
 
@@ -33,14 +31,10 @@ const deleteBtnHandler = async (event) => {
     if (response.ok) {
       document.location.replace('/post');
     } else {
-      alert('Failed to delete project');
+      alert('Not your post to delete! Woof!');
     }
   }
 };
-
-// if () {
-//   document.querySelector(".deletebtn").style.display = "none";
-// }
 
 document
   .querySelector('.new-post-form')
