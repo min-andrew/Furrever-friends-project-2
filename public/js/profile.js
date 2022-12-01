@@ -74,8 +74,9 @@ const newFormHandler = async (event) => {
     // If profile is successfully created, then redirects to the profile. If there is an error creating the profile, it alerts the users to try again.
 
     // TODO: currently going to /post, but eventually will want to route to /viewprofile
+    var userid = document.getElementById("profileUserId").getAttribute("userid");
     if (response.ok) {
-      document.location.replace("/post");
+      document.location.replace(`/profile/${userid}`);
     } else {
       alert("Failed to create profile. Please try again");
     }

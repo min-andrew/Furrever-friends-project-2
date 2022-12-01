@@ -94,6 +94,7 @@ router.get("/profile", withAuth, async (req, res) => {
     res.render("profile", {
       ...user,
       logged_in: true,
+      user_id: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);
@@ -129,6 +130,7 @@ router.get("/profile/:id", async (req, res) => {
     res.render("viewProfile", {
       profile,
       logged_in: true,
+      user_id: req.session.user_id
     });
   } catch (err) {
     res.status(500).json(err);

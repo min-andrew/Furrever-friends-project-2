@@ -1,7 +1,7 @@
 const viewProfileHandeler = async (event) => {
   event.preventDefault();
 
-  const userData = document.querySelector("#viewProfile").value.trim();
+  const userData = document.querySelector("#viewProfileCard").value.trim();
   if (userData) {
     const response = await fetch("/profile/:id", {
         method: 'POST',
