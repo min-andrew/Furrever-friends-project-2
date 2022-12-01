@@ -4,7 +4,7 @@
     <form class="form new-post-form" enctype="multipart/form-data">
       <div class="form-group row px-1">
         <label for="post-name" class="col-2 text-wrap">Quick Sniff:</label>
-        <input class="form-input col-8" placeholder="sniff sniff" type="text" id="post-title" name="title" />
+        <input class="form-input col-8 post-input-title" placeholder="sniff sniff" type="text" id="post-title" name="title" />
       </div>
       <div class="form-group row py-2">
         <label for="post-body" class="col-2 text-wrap">All the Kibbles:</label>
@@ -39,7 +39,7 @@
         </h2>
         <button type="button" data-id="{{post.id}}" class="deletebtn">X</button>
       </div>
-      <img class="img-responsive" src="{{post.image}}">
+      <img class="img-responsive mainphotoz" src="{{post.image}}">
       <p id="post-content">
         {{post.body}}
       </p>

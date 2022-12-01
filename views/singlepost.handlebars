@@ -1,27 +1,42 @@
 <div class="single-post-container my-4">
-    <div class="text-center card single-post">
-        <h2>{{post.title}}</h2>
-        <img class="img-responsive single-image" src="{{post.image}}">
-        <p>{{post.body}}</p>
-        <p class="post-meta">Created by
-            <a href="/profile/{{post.user.id}}" id="viewProfile">
-            <img src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
-            {{post.user.name}}</a>
-            on
-            {{format_date post.date_created}}
-    </div>
-
-    <form class="comment-form card my-1">
-        <div class="input-field">
-
-            <textarea type="text" id="comment" rows="10" placeholder="What's on your mind?"></textarea>
+    <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
+        <div class="col-sml-8 posts">
+            <div id="post-head">
+                <div id="namerz">
+                    <a href="./profile/{{post.user.id}}" id="viewProfile">
+                        <img src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
+                    </a>
+                    <a href="./profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
+                </div>
+                <h2 id="post-title">
+                    {{post.title}}
+                </h2>
+                <p></p>
+            </div>
+            <img class="img-responsive" src="{{post.image}}">
+            <p id="post-content">
+                {{post.body}}
+            </p>
+            <div id="bottomz">
+                <div id="commentz">
+                    <p class="post-meta numberz">
+                        {{post.comments.length}} {{format_plural "bark" post.comments.length}}
+                    </p>
+                </div>
+                <div id="footerz"> {{format_date post.date_created}}</div>
+            </div>
         </div>
-        <input type="hidden" name="post-id" value="{{post.id}}">
-        <button type="submit" id="comment-btn">Add Comment</button>
-    </form>
-</div>
-<div id="#comments">
-    {{> comments post.comments}}
+        <form class="comment-form">
+            <div class="input-field">
+                <textarea type="text" id="comment" placeholder="Explain your bark"></textarea>
+            </div>
+            <input type="hidden" name="post-id" value="{{post.id}}">
+            <button type="submit" id="comment-btn">Add Bark</button>
+        </form>
+        <div id="#comments">
+            {{> comments post.comments}}
+        </div>
+    </div>
 </div>
 
 
