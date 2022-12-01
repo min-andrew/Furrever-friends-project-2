@@ -34,7 +34,8 @@
         {{post.body}}
       </p>
       <p class="post-meta">Created by
-        <a href="./profile/{{post.user.id}}" id="viewProfile">{{post.user.name}}</a>
+        <a href="./profile/{{post.user.id}}"
+        id="viewProfile">{{post.user.name}} </a>
         on
         {{format_date post.date_created}}
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>

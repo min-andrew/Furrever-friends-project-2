@@ -10,7 +10,7 @@ const viewProfileHandeler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/viewProfile')
+        //document.location.replace('/viewProfile')
     } else {
         alert(response.statusText)
     }

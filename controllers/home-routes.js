@@ -18,7 +18,7 @@ router.get("/post", (req, res) => {
     include: [
       {
         model: User, 
-        attributes: ['name']
+        attributes: ['name', 'id']
       },
       {
         model: Comment
@@ -27,7 +27,7 @@ router.get("/post", (req, res) => {
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true }));
-
+      console.log(posts)
       res.render("post", { posts, logged_in: req.session.logged_in });
     })
     .catch((err) => {
@@ -61,7 +61,8 @@ router.get('/post/:id', (req, res) => {
         include: {
           model: User,
           attributes: [
-            'name'
+            'name',
+            'id'
           ]
         }
       },
@@ -88,6 +89,7 @@ router.get('/post/:id', (req, res) => {
 
 // get route for profile with auth
 router.get("/profile", withAuth, async (req, res) => {
+  console.log("here")
   try {
     // find logged user based on session id
     const userData = await User.findByPk(req.session.user_id, {
@@ -116,7 +118,7 @@ router.get("/createac", (req, res) => {
 
 router.get("/profile/:id", async (req, res) => {
   try {
-    const profileData = await Profile.findByPk(req.params.id, {
+    const profileData = await Profile.findOne({where: {user_id: req.params.id }}, {
       include: [
         {
           model: User,
@@ -125,8 +127,9 @@ router.get("/profile/:id", async (req, res) => {
       ],
     });
 
-    //const profile = profileData.get({ plain: true })
-    const profile = profileData;
+    const profile = profileData.get({ plain: true });
+
+    console.log("profile:", profile)
    
     res.render("viewProfile", {
       profile,

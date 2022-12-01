@@ -3,6 +3,15 @@ const { Profile } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 // These routes create and delete profiles.
+router.get('/', async(req, res) => {
+  try{
+    const profiles = await Profile.findAll({
+  })
+  res.status(200).json(profiles);
+} catch (err) {
+  res.status(400).json(err);
+}
+})
 
 router.post('/', withAuth, async (req, res) => {
   try {
