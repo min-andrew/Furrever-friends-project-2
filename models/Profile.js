@@ -17,6 +17,10 @@ Profile.init(
       primaryKey: true,
       autoIncrement: true,
     },
+    avatar: {
+      type: DataTypes.CHAR,
+      allowNull: true,
+    },
     dog_name: {
       type: DataTypes.STRING(24),
       allowNull: false,
