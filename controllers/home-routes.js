@@ -25,6 +25,7 @@ router.get("/post", (req, res) => {
         model: Comment,
       },
     ],
+    order: [['date_created', 'DESC']],
   })
     .then((postData) => {
       const posts = postData.map((post) => post.get({ plain: true }));
