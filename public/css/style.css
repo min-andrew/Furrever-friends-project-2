@@ -3,11 +3,12 @@
     --light-blue: #A4E8E0;
     --cyan: #4CD7D0;
     --dark-yellow: #E1C340;
-   
+    --dogfont: Verdana, Geneva, Tahoma, sans-serif;
 }
- * {
+
+* {
     font-family: 'Poppins', sans-serif;
- }
+}
 
 .navbar-custom {
     background-color: var(--light-blue);
@@ -15,13 +16,14 @@
 
 a {
     text-decoration: none;
-    color: white;  
+    color: white;
 }
 
 #banner {
     font-style: bolder;
-    font-size: larger;
+    font-size: 30px;
     text-shadow: var(--yellow);
+    font-family: var(--dogfont);
 }
 
 .bg-image {
@@ -34,7 +36,8 @@ a {
     position: relative;
 }
 
-#login-card, #createac-card{
+#login-card,
+#createac-card {
     background-color: var(--light-blue);
 }
 
@@ -61,10 +64,12 @@ a {
     background-color: var(--dark-yellow);
     color: white;
 }
+
 .btn-secondary:hover a {
     background-color: var(--dark-yellow);
     color: white;
 }
+
 .card {
     background-color: var(--light-blue);
 }
@@ -75,7 +80,7 @@ footer {
     font-size: .625rem;
 }
 
-.justify-content-center{
+.justify-content-center {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -83,12 +88,13 @@ footer {
 
 #image-upload {
     display: flex;
-    justify-content: center;   
+    justify-content: center;
 }
 
 .file-upload-button {
     background-color: #4CD7D0;
 }
+
 textarea {
     width: 80%;
     height: 100px;
@@ -103,7 +109,7 @@ textarea {
 
 #comment-btn:hover {
     background-color: #E1C340;
-    
+
 }
 
 .comment-form {
@@ -175,6 +181,7 @@ textarea {
 .profile-group {
     padding: .5rem;
 }
+
 .profile-input {
     width: 100%;
 }
@@ -186,4 +193,77 @@ textarea {
 
 .title {
     text-align: center;
+}
+
+#post-head {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 5px;
+}
+
+#post-head h2,
+p,
+a {
+    font-family: var(--dogfont);
+}
+
+#post-head h2,
+a {
+    color: rgb(1, 144, 144);
+}
+
+#new-post h3,
+label {
+    font-family: var(--dogfont);
+}
+
+#uploadbtn {
+    margin-bottom: 10px;
+}
+
+#post-title {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    width: 50%;
+}
+
+#namerz {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.deletebtn {
+    background-color: darkgray;
+    height: 10%;
+}
+
+#post-content {
+    margin-bottom: 0px;
+}
+
+#bottomz {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#commentz {
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+}
+
+#commentz a {
+    color: rgb(1, 144, 144);
+}
+
+#footerz {
+    display: flex;
+    align-self: flex-end;
+    font-size: 12px;
 }

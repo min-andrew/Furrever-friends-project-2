@@ -1,18 +1,19 @@
-<div class="row">
+<div class="row" id="new-post">
   <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 py-3 text-center">
     <h3>Create a new post:</h3>
     <form class="form new-post-form" enctype="multipart/form-data">
       <div class="form-group row px-1">
         <label for="post-name" class="col-2 text-wrap">Quick Sniff:</label>
-        <input class="form-input col-8" type="text" id="post-title" name="title" />
-      </div>
-      <div class="form-group">
-        <label for="image">Image</label>
-        <input type="file" id="image" name="image" accept="image/*" required>
+        <input class="form-input col-8" placeholder="sniff sniff" type="text" id="post-title" name="title" />
       </div>
       <div class="form-group row py-2">
         <label for="post-body" class="col-2 text-wrap">All the Kibbles:</label>
-        <textarea class="form-input col-8" rows="6" id="post-body" name="body"></textarea>
+        <textarea class="form-input col-8" rows="6" placeholder="kibble kibble kibble" id="post-body"
+          name="body"></textarea>
+      </div>
+      <div class="form-group" id="uploadbtn">
+        <label for="image">Upload a Picture: </label>
+        <input type="file" id="image" name="image" accept="image/*" required>
       </div>
       <div class="form-group">
         <button type="submit" class="btn btn-primary create-btn">CREATE</button>
@@ -23,27 +24,35 @@
 
 <!-- Loop over each object in the posts -->
 {{#each posts as |post|}}
-<div class="overflow-auto">
+<div class="overflow-auto post-listz">
   <div class="row card col-sm-11 col-md-9 col-lg-8 mx-auto my-2">
     <div class="col-sml-8 posts">
-      <h2 id="post-title">
-        {{post.title}}
-      </h2>
+      <div id="post-head">
+        <div id="namerz">
+          <a href="./profile/{{post.user.id}}" id="viewProfile">
+            <img src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
+          </a>
+          <a href="./profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
+        </div>
+        <h2 id="post-title">
+          <a href="/post/{{id}}">{{post.title}}</a>
+        </h2>
+        <button type="button" data-id="{{post.id}}" class="deletebtn">X</button>
+      </div>
       <img class="img-responsive" src="{{post.image}}">
       <p id="post-content">
         {{post.body}}
       </p>
-      <p class="post-meta">Created by
-        <img src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
-        <a href="./profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
-        on
-        {{format_date post.date_created}}
-        <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-      </p>
+      <div id="bottomz">
+        <div id="commentz">
+          <p class="post-meta numberz">
+            <a href="/post/{{id}}">{{comments.length}} {{format_plural "bark" comments.length}} (+) </a>
+          </p>
+        </div>
+        <div id="footerz"> {{format_date post.date_created}}</div>
+      </div>
     </div>
   </div>
+  {{/each}}
 </div>
-
-{{/each}}
-
 <script src="/js/post.js"></script>
