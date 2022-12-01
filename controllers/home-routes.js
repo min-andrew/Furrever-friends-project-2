@@ -50,7 +50,13 @@ router.get("/post/:id", (req, res) => {
         include: {
           model: User,
           attributes: ["name", "id"],
+          include: [{ model: Profile, attributes: ["avatar"] }],
         },
+      },
+      {
+        model: User,
+        attributes: ["name", "id"],
+        include: { model: Profile, attributes: ["avatar"] },
       },
     ],
   })
