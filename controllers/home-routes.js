@@ -46,11 +46,17 @@ router.get("/post/:id", (req, res) => {
     include: [
       {
         model: Comment,
-        attributes: ["id", "comment_body", "post_id", "user_id"],
+        attributes: ["id", "comment_body", "post_id", "user_id", "dateCreated"],
         include: {
           model: User,
           attributes: ["name", "id"],
+          include: [{ model: Profile, attributes: ["avatar"] }],
         },
+      },
+      {
+        model: User,
+        attributes: ["name", "id"],
+        include: { model: Profile, attributes: ["avatar"] },
       },
     ],
   })
@@ -88,7 +94,7 @@ router.get("/profile", withAuth, async (req, res) => {
     res.render("profile", {
       ...user,
       logged_in: true,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);
@@ -124,7 +130,7 @@ router.get("/profile/:id", async (req, res) => {
     res.render("viewProfile", {
       profile,
       logged_in: true,
-      user_id: req.session.user_id
+      user_id: req.session.user_id,
     });
   } catch (err) {
     res.status(500).json(err);

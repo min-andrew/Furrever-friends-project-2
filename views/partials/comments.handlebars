@@ -2,13 +2,14 @@
 <div class="comments card mx-auto col-sm-10 my-5 py-3 text-center">
   <section class="comment">
     <div class="meta">
-      {{user.name}}
-      {{!-- on --}}
-      {{post.date_created}}
-    </div>
+    
     <div class="text ">
       {{comment_body}}
-      <hr>
+    </div>  
+    <a href="/profile/{{user_id}}">
+      <img src="{{user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">{{user.name}}</a>
+      on
+      {{dateCreated}}
     </div>
   </section>
 </div>
