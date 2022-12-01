@@ -1,15 +1,19 @@
 {{#each this}}
-<div class="comments card mx-auto col-sm-10 my-5 py-3 text-center">
+<div class="comments card mx-auto col-sm-10 my-3 py-1 text-center">
   <section class="comment">
     <div class="meta">
-    
-    <div class="text ">
-      {{comment_body}}
-    </div>  
-    <a href="/profile/{{user_id}}">
-      <img src="{{user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">{{user.name}}</a>
-      on
-      {{dateCreated}}
+      <div id="post-head-commentz">
+        <div id="namerz">
+          <a href="./profile/{{user.id}}" id="viewProfile">
+            <img src="{{user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
+          </a>
+          <a href="./profile/{{post.user.id}}" id="viewProfile">{{user.name}} </a>
+        </div>
+        <div class="text text-commentz">
+          {{comment_body}}
+        </div>
+        <p id="comment-card-date">{{dateCreated}}</p>
+      </div>
     </div>
   </section>
 </div>

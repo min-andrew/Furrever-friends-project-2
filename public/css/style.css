@@ -104,7 +104,7 @@ textarea {
     /* width: 30rem; */
     background-color: #4CD7D0;
     border-radius: 0.375rem;
-    margin-bottom: 20px;
+    /* margin-bottom: 20px; */
 }
 
 #comment-btn:hover {
@@ -116,8 +116,9 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 10px;
-    width: 80%;
+    justify-content: space-around;
+    /* margin-bottom: 10px; */
+    /* width: 80%; */
 }
 
 .input-field {
@@ -230,6 +231,13 @@ label {
     width: 50%;
 }
 
+.post-input-title {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+}
+
 #namerz {
     display: flex;
     flex-direction: column;
@@ -258,7 +266,8 @@ label {
     font-size: 14px;
 }
 
-#commentz a {
+#commentz p,
+a {
     color: rgb(1, 144, 144);
 }
 
@@ -266,4 +275,37 @@ label {
     display: flex;
     align-self: flex-end;
     font-size: 12px;
+}
+
+textarea {
+    width: 100%;
+    height: 50px;
+    border-radius: 4px;
+    background-color: whitesmoke;
+}
+
+mainphotoz {
+    height: auto;
+    width: 100px;
+}
+
+#comment-card-date {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 0px;
+    margin-right: 8px;
+}
+
+#post-head-commentz {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    margin: 5px;
+}
+
+.text-commentz {
+    display: flex;
+    align-items: center;
 }
