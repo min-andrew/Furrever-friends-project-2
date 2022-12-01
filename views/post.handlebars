@@ -43,7 +43,15 @@
       <p id="post-content">
         {{post.body}}
       </p>
-      <div id="bottomz">
+
+            {{!-- Like button (bone) --}}
+    <div class="like-bar">
+      <button class="like"><img src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png" class="heart"></button>
+      <p class="like-number">0</p>
+    </div>
+
+      {{!-- Comments link and Date bar --}}
+    <div id="bottomz">
         <div id="commentz">
           <p class="post-meta numberz">
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "bark" comments.length}} (+) </a>
@@ -56,3 +64,4 @@
   {{/each}}
 </div>
 <script src="/js/post.js"></script>
+<script src="/js/like.js"></script>

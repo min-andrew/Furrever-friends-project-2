@@ -310,3 +310,23 @@ mainphotoz {
     display: flex;
     align-items: center;
 }
+
+.like {
+    background-color: transparent;
+    border: none;
+    
+}
+.like img {
+    width: 70px;
+    height: 70px;
+    background-color: transparent;
+}
+
+.like:active {
+    transform: translateY(4px);
+}
+
+.like-number {
+    text-align: center;
+    color: rgb(1, 144, 144);
+}
