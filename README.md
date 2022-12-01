@@ -53,12 +53,15 @@
   <br>
 
   ## [Credits](#table-of-contents) 
-  Our team is grateful for the assistance from tutor Rene Trevino, as well as several awesome individuals on AskBCS. Last but not least, we are thankful for the assistance of our **UW Full Stack Web Development Bootcamp** instructors, teacher assistants, and fellow students.
+  Our team is grateful for the assistance from our tutors, as well as several awesome individuals on AskBCS. Last but not least, we are thankful for the assistance of our **UW Full Stack Web Development Bootcamp** instructors, teacher assistants, and fellow students.
   <br><br>
 
   **Third Party References and Tutorials used include:** 
   <br>
-    coming soon...
+   https://www.canva.com/<br>
+   https://cloudinary.com/<br>
+   https://makeschool.org/mediabook/oa/tutorials/rotten-potatoes---movie-reviews-with-express-js/adding-route-for-comments/<br>
+   https://gist.github.com/amsul/5812749<br>
   <br>
 
   ## [License](#table-of-contents)
