@@ -1,4 +1,28 @@
 {{#if profile.user_id}}
+<<<<<<< HEAD
+<div class="row" id="viewProfileCard">
+  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-auto text-center">
+    <div class="info-block">
+      <h3 id="view-dog-avatar"><img src="{{profile.avatar}}" height="110px" width="110px"></h3>
+    </div>
+    <div class="info-block">
+      <h3 id="view-dog-name">{{profile.dog_name}}</h3>
+    </div>
+    <div class="info-block">
+      <span id="view-dog-breed">{{profile.breed}}</span>
+    </div>
+    <div class="info-block">
+      <span id="view-dog-gender">{{profile.gender}}</span>
+    </div>
+    <div class="info-block">
+      <span id="view-dog-size">{{profile.size}}</span>
+    </div>
+    <div class="info-block">
+      <span id="view-dog-neighborhood">{{profile.neighborhood}}</span>
+    </div>
+    <div class="info-block">
+      <span id="view-dog-hobbies">{{profile.hobbies}}</span>
+=======
   <div class="row" id="viewProfileCard">
     <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-auto text-center">
        <div class="info-block">
@@ -22,15 +46,17 @@
       <div class="info-block">
         <span id="view-dog-hobbies">Hobbies: {{profile.hobbies}}</span>
       </div>
+>>>>>>> 7034380e5dcd30b1152efe5da2c0a430af108424
     </div>
   </div>
+</div>
 
 {{else}}
 
-  <div class="row">
-    <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 text-center">
-      <span> Profile not found</span>
-    </div>
+<div class="row">
+  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 text-center">
+    <span> Profile not found</span>
   </div>
+</div>
 
 {{/if}}

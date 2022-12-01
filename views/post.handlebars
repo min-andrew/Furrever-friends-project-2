@@ -35,8 +35,7 @@
       </p>
       <p class="post-meta">Created by
         <img src="{{post.user.profile.avatar}}" height="50px" width="50px" style="border-radius:10px">
-        <a href="./profile/{{post.user.id}}"
-        id="viewProfile">{{post.user.name}} </a>
+        <a href="./profile/{{post.user.id}}" id="viewProfile">{{post.user.name}} </a>
         on
         {{format_date post.date_created}}
         <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
@@ -47,4 +46,4 @@
 
 {{/each}}
 
-<script src="/JS/post.js"></script>
+<script src="/js/post.js"></script>
