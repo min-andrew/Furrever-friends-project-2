@@ -208,6 +208,7 @@ textarea {
 p,
 a {
     font-family: var(--dogfont);
+    text-align: center;
 }
 
 #post-head h2,
@@ -245,8 +246,14 @@ label {
 }
 
 .deletebtn {
-    background-color: darkgray;
+    background-color: 4CD7D0;
     height: 10%;
+    border-radius: 30%;
+}
+
+.deletebtn:hover {
+    background-color: var(--dark-yellow);
+    color: black;
 }
 
 #post-content {
@@ -314,8 +321,9 @@ mainphotoz {
 .like {
     background-color: transparent;
     border: none;
-    
+
 }
+
 .like img {
     width: 70px;
     height: 70px;
