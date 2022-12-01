@@ -42,7 +42,7 @@ router.post('/', withAuth, upload.single('image'), async (req, res) => {
 
       res.status(200).json(newPost);
     });
-  } catch (err) {
+     } catch (err) {
     res.status(400).json(err);
   }
 });
