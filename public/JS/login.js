@@ -17,7 +17,7 @@ const loginFormHandler = async (event) => {
         // If successful, redirect the browser to the profile page
         document.location.replace('/post');
       } else {
-        alert(response.statusText);
+        alert("Email/password is incorrect, please re-enter.");
       }
     }
   };
