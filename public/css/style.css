@@ -358,3 +358,15 @@ mainphotoz {
     justify-content: center;
     margin-left: 10px;
 }
+
+#avatars-options {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-left: 10px;
+    justify-content: space-around;
+}
+
+#avatar {
+    margin-left: 10px;
+}
