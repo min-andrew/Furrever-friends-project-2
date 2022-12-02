@@ -1,26 +1,26 @@
 {{#if profile.user_id}}
-<div class="row" id="viewProfileCard">
-  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-auto text-center">
-    <div class="info-block">
+<div class="row " id="viewProfileCard">
+  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 text-center">
+    <div class="info-block my-2">
       <h3 id="view-dog-avatar"><img src="{{profile.avatar}}" height="110px" width="110px"></h3>
     </div>
     <div class="info-block">
       <h3 id="view-dog-name">{{profile.dog_name}}</h3>
     </div>
     <div class="info-block">
-      <span id="view-dog-breed">Breed: {{profile.breed}}</span>
+      <span class="profile-header">Breed: </span><span id="view-dog-breed">{{profile.breed}}</span>
     </div>
     <div class="info-block">
-      <span id="view-dog-gender">Gender: {{profile.gender}}</span>
+      <span class="profile-header">Gender: </span><span id="view-dog-gender">{{profile.gender}}</span>
     </div>
     <div class="info-block">
-      <span id="view-dog-size">Size: {{profile.size}}</span>
+      <span class="profile-header">Size: </span><span id="view-dog-size">{{profile.size}}</span>
     </div>
     <div class="info-block">
-      <span id="view-dog-neighborhood">Neighborhood: {{profile.neighborhood}}</span>
+      <span class="profile-header">Neighborhood: </span><span id="view-dog-neighborhood">{{profile.neighborhood}}</span>
     </div>
     <div class="info-block">
-      <span id="view-dog-hobbies">Hobbies: {{profile.hobbies}}</span>
+      <span class="profile-header">Hobbies: </span><span id="view-dog-hobbies">{{profile.hobbies}}</span>
     </div>
   </div>
 </div>
