@@ -4,7 +4,8 @@
     <form class="form new-post-form" enctype="multipart/form-data">
       <div class="form-group row px-1">
         <label for="post-name" class="col-2 text-wrap">Quick Sniff:</label>
-        <input class="form-input col-8 post-input-title" placeholder="sniff sniff" type="text" id="post-title" name="title" />
+        <input class="form-input col-8 post-input-title" placeholder="sniff sniff" type="text" id="post-title"
+          name="title" />
       </div>
       <div class="form-group row py-2">
         <label for="post-body" class="col-2 text-wrap">All the Kibbles:</label>
@@ -44,18 +45,26 @@
         {{post.body}}
       </p>
 
-            {{!-- Like button (bone) --}}
-    <div class="like-bar">
-      <button class="like"><img src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png" class="heart"></button>
-      <p class="like-number">0</p>
-    </div>
+      {{!-- Like button (bone) --}}
+      {{!-- <div class="like-bar">
+        <button class="like"><img
+            src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png"
+            class="heart"></button>
+        <p class="like-number">0</p>
+      </div> --}}
 
       {{!-- Comments link and Date bar --}}
-    <div id="bottomz">
+      <div id="bottomz">
         <div id="commentz">
           <p class="post-meta numberz">
             <a href="/post/{{id}}">{{comments.length}} {{format_plural "bark" comments.length}} (+) </a>
           </p>
+        </div>
+        <div class="like-bar">
+          <button class="like"><img
+              src="https://user-images.githubusercontent.com/110498167/205177592-aece83f0-8143-4f62-ba8f-54a402853766.png"
+              class="heart"></button>
+          <p class="like-number">0</p>
         </div>
         <div id="footerz"> {{format_date post.date_created}}</div>
       </div>
