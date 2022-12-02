@@ -21,7 +21,7 @@ a {
 
 #banner {
     font-style: bolder;
-    font-size: 30px;
+    font-size: 1.4rem;
     text-shadow: var(--yellow);
     font-family: var(--dogfont);
 }
@@ -44,6 +44,7 @@ a {
 .border-custom {
     border-color: var(--cyan);
 }
+
 
 .btn-primary {
     font-style: bolder;
@@ -192,6 +193,13 @@ textarea {
     margin-top: 6px;
 }
 
+.info-block {
+    font-size: 1.2rem;
+}
+
+.profile-header {
+    font-weight: bold;
+}
 .title {
     text-align: center;
 }
