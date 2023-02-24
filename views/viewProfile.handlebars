@@ -1,8 +1,8 @@
 {{#if profile.user_id}}
 <div class="row " id="viewProfileCard">
-  <div class="card mx-auto col-sm-10 col-md-8 col-lg-6 my-5 text-center">
+  <div class="card mx-auto col-sm-12 col-md-8 col-lg-6 my-5 text-center view-profile">
     <div class="info-block my-2">
-      <h3 id="view-dog-avatar"><img src="{{profile.avatar}}" height="110px" width="110px"></h3>
+      <h3 id="view-dog-avatar"><img class="rounded" src="{{profile.avatar}}" height="110px" width="110px"></h3>
     </div>
     <div class="info-block">
       <h3 id="view-dog-name">{{profile.dog_name}}</h3>
