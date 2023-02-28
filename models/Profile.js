@@ -23,27 +23,27 @@ Profile.init(
     },
     dog_name: {
       type: DataTypes.STRING(24),
-      allowNull: false,
+      allowNull: true,
     },
     breed: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     gender: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     size: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     neighborhood: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     hobbies: {
       type: DataTypes.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     user_id: {
       type: DataTypes.INTEGER,

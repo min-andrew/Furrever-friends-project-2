@@ -2,14 +2,15 @@
     <div class="col-md-6 card profile">
         <div>
          <h2 class="create-profile" id="profileUserId" userid={{user_id}}>Welcome, {{name}}!</h2>
-        <h3 class="create-profile">Create Your Profile</h3>
+        <h4 class="create-profile">Create Your Profile</h3>
         </div>
 
 
-    <form class="form new-profile-form">
+    <form class="form new-profile-form ">
       {{!-- Avatar --}}
-      <div>
-        <label id="avatar" for="avatar-list">Avatar:</label>
+      <label id="avatar" for="avatar-list">Avatar:</label>
+      <div class="avatar-list">
+        
         <div class="form-check">
           <input class="form-check-input avatar" type="checkbox" value="optionOne" id="optionOne">
           <label for="optionOne" class="avatar-label">
@@ -38,6 +39,7 @@
               height="50">
           </label>
         </div>
+      
         <div class="form-check">
           <input class="form-check-input avatar" type="checkbox" value="optionFive" id="optionFive">
           <label for="optionFive" class="avatar-label">
@@ -66,12 +68,13 @@
               height="50">
           </label>
         </div>
+  
       </div>
 
       {{!-- Name --}}
       <div class="form-group profile-group">
         <label id="name" for="dog-name">Dog Name:</label>
-        <input class="form-input profile-input" type="text" id="dog-name" name="dog-name" />
+        <input class="form-input profile-input rounded" type="text" id="dog-name" name="dog-name" />
       </div>
 
       {{!-- Breed --}}
@@ -216,13 +219,13 @@
       {{!-- Neighborhood --}}
       <div class="form-group profile-group">
         <label for="dog-neighborhood">Neighborhood:</label>
-        <textarea class="form-input profile-input" id="dog-neighborhood" name="dog-neighborhood"></textarea>
+        <textarea class="form-input profile-input rounded" id="dog-neighborhood" name="dog-neighborhood"></textarea>
       </div>
 
       {{!-- Hobbies --}}
       <div class="form-group profile-group">
         <label for="dog-hobbies">Hobbies:</label>
-        <textarea class="form-input profile-input" id="dog-hobbies" name="dog-hobbies"></textarea>
+        <textarea class="form-input profile-input rounded" id="dog-hobbies" name="dog-hobbies"></textarea>
       </div>
 
       {{!-- Submit Button --}}
